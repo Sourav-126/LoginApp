@@ -47,15 +47,10 @@ PORT=3000
 NODE_ENV=development
 DATABASE_URL=your_database_connection_string
 JWT_SECRET=your_jwt_secret
-📝 API Documentation
-EndpointMethodDescription/api/usersGETGet all users/api/users/:idGETGet user by ID/api/usersPOSTCreate new user/api/users/:idPUTUpdate user/api/users/:idDELETEDelete user
+
 📋 Available Scripts
 
 pnpm run start - Start the production server
-pnpm run dev - Start development server with hot reload
-pnpm run build - Build the TypeScript project
-pnpm run lint - Lint the codebase
-pnpm run test - Run tests
 
 🧩 Type Validation with Zod
 Example of request validation:
