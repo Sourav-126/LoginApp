@@ -1,0 +1,9 @@
+body {
+  width: 1440;
+  height: 1024;
+  gap: 16px;
+  padding-top: 24px;
+  padding-right: 32px;
+  padding-bottom: 24px;
+  padding-left: 32px;
+}
