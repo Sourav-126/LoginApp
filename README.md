@@ -1,76 +1,74 @@
-Backend API Project
-This repository contains a backend API built with Node.js, Express, Zod for validation, and Prisma ORM for database operations.
-Tech Stack
+🚀 Node.js Backend API
+A modern TypeScript backend API built with Express, Zod validation, and Prisma ORM.
+✨ Tech Stack
 
-Node.js: JavaScript runtime
-Express: Web framework for Node.js
-TypeScript: Static typing for JavaScript
-Zod: Schema validation library
-Prisma ORM: Database toolkit for TypeScript & Node.js
-PNPM: Fast, disk space efficient package manager
+Node.js - JavaScript runtime
+Express - Fast, unopinionated web framework
+TypeScript - Typed JavaScript for better developer experience
+Zod - Schema validation with static type inference
+Prisma ORM - Next-generation database ORM
+PNPM - Fast, disk space efficient package manager
 
-Project Structure
+📁 Project Structure
 .
-├── package.json
-├── pnpm-lock.yaml
-├── tsconfig.json
-├── src/
-│   ├── index.ts                # Main entry point
-│   ├── types/
-│   │   └── user.ts             # User type definitions
-│   ├── middleware/
-│   │   └── middleware.ts       # Express middleware
-│   └── routes/
-│       └── userRouter.ts       # User-related routes
-Getting Started
+├── package.json          # Project dependencies and scripts
+├── pnpm-lock.yaml        # PNPM lock file
+├── tsconfig.json         # TypeScript configuration
+└── src/
+    ├── index.ts          # Main application entry point
+    ├── types/
+    │   └── user.ts       # User type definitions
+    ├── middleware/
+    │   └── middleware.ts # Express middleware functions
+    └── routes/
+        └── userRouter.ts # User routes and controllers
+🚀 Getting Started
 Prerequisites
 
-Node.js (v14 or higher recommended)
-PNPM package manager
+Node.js (v14 or higher)
+PNPM
 
 Installation
-
-Clone the repository:
-bashgit clone <repository-url>
+bash# Clone the repository
+git clone <repository-url>
 cd <project-directory>
 
-Install dependencies:
-bashpnpm install
+# Install dependencies
+pnpm install
 
-Set up your environment variables:
-bashcp .env.example .env
-Then edit the .env file with your database connection string and other configuration.
-Run database migrations:
-bashpnpm prisma migrate dev
+# Start the server
+pnpm run start
+💾 Database Configuration
+This project uses Prisma ORM to interact with your database. Configure your database connection in .env:
+DATABASE_URL="postgresql://user:password@localhost:5432/mydb"
+🔐 Environment Variables
+Create a .env file in the root directory:
+PORT=3000
+NODE_ENV=development
+DATABASE_URL=your_database_connection_string
+JWT_SECRET=your_jwt_secret
+📝 API Documentation
+EndpointMethodDescription/api/usersGETGet all users/api/users/:idGETGet user by ID/api/usersPOSTCreate new user/api/users/:idPUTUpdate user/api/users/:idDELETEDelete user
+📋 Available Scripts
 
-Start the development server:
-bashpnpm run start
-
-
-Database Setup
-This project uses Prisma ORM with your preferred database. The database connection is configured in the prisma/schema.prisma file.
-Make sure to update your .env file with the correct database URL.
-API Endpoints
-The API provides various endpoints for user management and other features. For detailed documentation on available endpoints, refer to the API documentation.
-Scripts
-
-pnpm run start - Start the server
-pnpm run dev - Start the server with hot-reload (for development)
-pnpm run build - Build the TypeScript code
-pnpm run lint - Run linting
+pnpm run start - Start the production server
+pnpm run dev - Start development server with hot reload
+pnpm run build - Build the TypeScript project
+pnpm run lint - Lint the codebase
 pnpm run test - Run tests
 
-Type Validation
-The application uses Zod for input validation and type safety. Schemas for validation are defined within the route handlers or in separate files when appropriate.
-Middleware
-Express middleware functions are located in the src/middleware directory and are used for request processing, authentication, error handling, etc.
-Contributing
+🧩 Type Validation with Zod
+Example of request validation:
+typescriptimport { z } from 'zod';
 
-Fork the repository
-Create your feature branch (git checkout -b feature/amazing-feature)
-Commit your changes (git commit -m 'Add some amazing feature')
-Push to the branch (git push origin feature/amazing-feature)
-Open a Pull Request
+const UserSchema = z.object({
+  email: z.string().email(),
+  name: z.string().min(2),
+  password: z.string().min(6)
+});
 
-License
-This project is licensed under the MIT License - see the LICENSE file for details.RetryClaude does not have the ability to run the code it generates yet.Claude can make mistakes. Please double-check responses. 3.7 Sonnet
+// Use in routes for validation
+🔄 Middleware
+Custom middleware for authentication, logging, and error handling are located in src/middleware/middleware.ts.
+📄 License
+This project is licensed under the MIT License.
