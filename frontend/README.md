@@ -1,54 +1,98 @@
-# React + TypeScript + Vite
+# 🚀 React Frontend 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern React frontend built with Vite and JavaScript, using Axios for API communication.
 
-Currently, two official plugins are available:
+## ✨ Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React** - UI library for building user interfaces
+- **Vite** - Next-generation frontend tooling
+- **JavaScript** - Programming language
+- **Axios** - Promise-based HTTP client
+- **PNPM** - Fast, disk space efficient package manager
 
-## Expanding the ESLint configuration
+## 📁 Project Structure
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+.
+├── public/               # Static assets 
+├── src/                  # Source files
+│   ├── assets/           # Images, fonts, etc.
+│   ├── components/       # Reusable components
+│   ├── hooks/            # Custom React hooks
+│   ├── pages/            # Application pages
+│   ├── services/         # API services
+│   ├── utils/            # Utility functions
+│   ├── App.jsx           # Main App component
+│   ├── main.jsx          # Application entry point
+│   └── index.css         # Global styles
+├── .eslintrc.cjs         # ESLint configuration
+├── .gitignore            # Git ignore file
+├── index.html            # HTML template
+├── package.json          # Project dependencies and scripts
+├── pnpm-lock.yaml        # PNPM lock file
+├── vite.config.js        # Vite configuration
+└── README.md             # Project documentation
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Getting Started
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+- Node.js (v14 or higher)
+- PNPM
+
+### Installation
+
+```bash
+# Clone the repository
+git clone <repository-url>
+cd <project-directory>
+
+# Install dependencies
+pnpm install
+
+# Start the development server
+pnpm run dev
 ```
+
+## 🔌 API Integration
+
+This project uses Axios for API communication. API services are located in the `src/services` directory.
+
+Example of an API service:
+
+```javascript
+// src/services/api.js
+import axios from 'axios';
+
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000/api';
+
+const apiClient = axios.create({
+  baseURL: API_BASE_URL,
+  headers: {
+    'Content-Type': 'application/json',
+  },
+});
+
+export default apiClient;
+```
+
+## 🔐 Environment Variables
+
+Create a `.env` file in the root directory:
+
+```
+VITE_API_BASE_URL=http://localhost:3000/api
+```
+
+## 📋 Available Scripts
+
+- `pnpm run dev` - Start development server
+- `pnpm run build` - Build for production
+- `pnpm run preview` - Preview production build locally
+- `pnpm run lint` - Lint the codebase
+- `pnpm run test` - Run tests
+
+## 🧩 Component Structure
+
+Com
